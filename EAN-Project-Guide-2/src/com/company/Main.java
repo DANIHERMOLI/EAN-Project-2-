@@ -12,7 +12,6 @@ public class Main {
         if(intChecker) {
             int number = input.nextInt();
             numberToWords(number);
-            input.close();
         } else {
             System.out.println("Por favor solo ingresar numeros.");
         }
