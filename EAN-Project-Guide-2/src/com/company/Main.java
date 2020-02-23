@@ -1,7 +1,7 @@
 /**
  @title          :Main.java
  @description    :This program is meant to teach kids the numbers from 0 to 9 based on a bigger number
- @author         :Sergio Guzman @ sergio.guzman@blackboard.com
+ @author         :Sergio Guzman @ sgioguzman@gmail.com
  @date           :2020-02-22
  @version        :1.5
  @usage          :java Main.java
