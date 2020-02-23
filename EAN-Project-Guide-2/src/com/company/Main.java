@@ -1,3 +1,13 @@
+/**
+ @title          :Main.java
+ @description    :This program is meant to teach kids the numbers from 0 to 9 based on a bigger number
+ @author         :Sergio Guzman @ sergio.guzman@blackboard.com
+ @date           :2020-02-22
+ @version        :1.5
+ @usage          :java Main.java
+ ==================================================================================================================
+ */
+
 package com.company;
 import java.util.Scanner;
 
@@ -35,7 +45,7 @@ public class Main {
         if(a < 0) {
             System.out.println("Ingresar solo valores mayores a cero");
         } else if(a == 0) {
-            System.out.println("Zero");
+            System.out.println("0 - Cero - Zero");
         } else {
             int counter = 0;
             long length = getDigitCount(a);
@@ -46,43 +56,43 @@ public class Main {
                     a /= 10;
                     switch ((int)lastNumber) {
                         case (1):
-                            System.out.println("One");
+                            System.out.println("1 - Uno - One");
                             counter++;
                             break;
                         case (2):
-                            System.out.println("Two");
+                            System.out.println("2 - Dos - Two");
                             counter++;
                             break;
                         case (3):
-                            System.out.println("Three");
+                            System.out.println("3 - Tres - Three");
                             counter++;
                             break;
                         case (4):
-                            System.out.println("Four");
+                            System.out.println("4 - Cuatro - Four");
                             counter++;
                             break;
                         case (5):
-                            System.out.println("Five");
+                            System.out.println("5 - Cinco - Five");
                             counter++;
                             break;
                         case (6):
-                            System.out.println("Six");
+                            System.out.println("6 - Seis - Six");
                             counter++;
                             break;
                         case (7):
-                            System.out.println("Seven");
+                            System.out.println("7 - Siete - Seven");
                             counter++;
                             break;
                         case (8):
-                            System.out.println("Eight");
+                            System.out.println("8 - Ocho - Eight");
                             counter++;
                             break;
                         case (9):
-                            System.out.println("Nine");
+                            System.out.println("9 - Nueve - Nine");
                             counter++;
                             break;
                         case (0):
-                            System.out.println("Zero");
+                            System.out.println("0 - Cero - Zero");
                             counter++;
                             break;
                         default:
@@ -90,7 +100,7 @@ public class Main {
                     }
                 } while (a > 0);
                 while (counter < length) {
-                    System.out.println("Zero");
+                    System.out.println("0 - Cero - Zero");
                     counter++;
                 }
             }
