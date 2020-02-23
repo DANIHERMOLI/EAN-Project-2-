@@ -2,35 +2,49 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         // write your code here
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Por favor ingrese el numero: ");
-        boolean intChecker = input.hasNextInt();
-        if(intChecker) {
-            int number = input.nextInt();
-            numberToWords(number);
-        } else {
-            System.out.println("Por favor solo ingresar numeros.");
-        }
+        do {
+            System.out.println("Por favor ingrese el numero: ");
+            boolean intChecker = input.hasNextLong();
+            if (intChecker) {
+                long number = input.nextLong();
+                numberToWords(number);
+                input.nextLine();
+                System.out.println("Desea volver a ingresar un numero? Y/N");
+                String oneMoreTime = input.nextLine().toLowerCase();
+                if(oneMoreTime.equals("y")) {
+                    continue;
+                } else if(oneMoreTime.equals("n")) {
+                    System.out.println("Gracias por jugar.");
+                    break;
+                } else {
+                    System.out.println("Opcion invalida. Cerrando Apliacion");
+                    break;
+                }
+            } else {
+                System.out.println("Por favor solo ingresar numeros.");
+            }
+            input.nextLine();
+        } while(true);
     }
 
-    public static void numberToWords(int a) {
+    public static void numberToWords(long a) {
         if(a < 0) {
             System.out.println("Ingresar solo valores mayores a cero");
         } else if(a == 0) {
             System.out.println("Zero");
         } else {
             int counter = 0;
-            int length = getDigitCount(a);
+            long length = getDigitCount(a);
             a = reverse(a);
             if (a >= 1) {
                 do {
-                    int lastNumber = a % 10;
+                    long lastNumber = a % 10;
                     a /= 10;
-                    switch (lastNumber) {
+                    switch ((int)lastNumber) {
                         case (1):
                             System.out.println("One");
                             counter++;
@@ -83,12 +97,12 @@ public class Main {
         }
     }
 
-    public static int reverse(int number) {
+    public static long reverse(long number) {
         boolean isNegative = number < 0;
         number = number < 0 ? number * (-1) : number;
-        int newNumber = 0, counter = 1;
+        long newNumber = 0, counter = 1;
         do {
-            int lastNumber = number - ((number / 10) * 10);
+            long lastNumber = number - ((number / 10) * 10);
             number /= 10;
             newNumber = (newNumber * counter)+ lastNumber;
             counter = 10;
@@ -100,7 +114,7 @@ public class Main {
         }
     }
 
-    public static int getDigitCount(int a) {
+    public static long getDigitCount(long a) {
         if(a < 0) {
             return -1;
         } else {
